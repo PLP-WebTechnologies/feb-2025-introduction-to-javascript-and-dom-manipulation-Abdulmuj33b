@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Fruits Store</title>
+    <link rel="stylesheet" href="my-style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Welcome to Fresh Fruits Store</h1>
+        <p id="dynamicText">Your one-stop shop for farm-fresh fruits in Nigeria.</p>
+        <button onclick="changeText()">Change Description</button>
+    </header>
+
+    <main class="container">
+        <section class="products">
+            <h2>Our Fresh Picks</h2>
+            <div class="grid">
+                <div class="fruit-card">
+                    <img src="apples.jpeg" alt="Apples">
+                    <p>Juicy Apples</p>
+                </div>
+                <div class="fruit-card">
+                    <img src="oranges.jpeg" alt="Oranges">
+                    <p>Sweet Oranges</p>
+                </div>
+                <div class="fruit-card">
+                    <img src="mangoes.jpg" alt="Mangoes">
+                    <p>Ripe Mangoes</p>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h2>Special Offers</h2>
+            <p>Get 10% off your first order! 🍓</p>
+            <button onclick="toggleBox()">Toggle Special Box</button>
+            <div id="boxContainer"></div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fresh Fruits Store. All rights reserved.</p>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+    </footer>
+
+    <script>
+        function changeText() {
+            let textElement = document.getElementById("dynamicText");
+            textElement.textContent = "Fresh, organic fruits delivered to your doorstep!";
+            textElement.classList.toggle("highlight");
+        }
+
+        function toggleBox() {
+            let container = document.getElementById("boxContainer");
+            if (container.innerHTML === "") {
+                let newDiv = document.createElement("div");
+                newDiv.className = "box";
+                newDiv.textContent = "Exclusive Offer!";
+                container.appendChild(newDiv);
+            } else {
+                container.innerHTML = "";
+            }
+        }
+
+        function toggleTheme() {
+            let bodyElement = document.body;
+            bodyElement.style.backgroundColor = 
+                bodyElement.style.backgroundColor === "black" ? "#f8f9fa" : "black";
+            bodyElement.style.color = 
+                bodyElement.style.color === "white" ? "black" : "white";
+        }
+    </script>
+
+</body>
+</html>

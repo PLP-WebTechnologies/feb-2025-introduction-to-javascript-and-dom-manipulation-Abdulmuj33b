@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #4CAF50;
+    padding: 15px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: rgb(7, 3, 4);
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+.hero {
+    text-align: center;
+    background: url('fruit-bg.jpeg') center/cover no-repeat;
+    color: rgba(29, 15, 224, 0.753);
+    padding: 40px 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.products .grid {
+    display: flex;
+    gap: 15px;
+}
+
+.fruit-card {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.fruit-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.sidebar {
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}
+
+.highlight {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* 📱 Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .products .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 20px 10px;
+    }
+}
